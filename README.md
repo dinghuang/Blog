@@ -63,15 +63,15 @@ categories: JAVA
 更多配置请参考官方文档
 
 ## 提交
-输入命令
+1. 输入命令
 ``npm install hexo-deployer-git --save``
-创建文章
+2. 创建文章
 ``hexo new "你想要的文章标题填在这个双引号里"``
-文章会生成在
+3. 文章会生成在
 ``./source/_posts/设计模式.md``
 进行修改后
 ``hexo clean ; hexo genarate``
-然后输入
+4. 然后输入
 `` hexo deploy``
 此时文章已经成功部署。
 
