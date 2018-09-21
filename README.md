@@ -26,8 +26,9 @@
 ## 配置NEXT主题
 
 1. 安装NEXT主题
-```mkdir themes/next
-$ curl -s https://api.github.com/repos/iissnan/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1```
+
+``mkdir themes/next``
+``curl -s https://api.github.com/repos/iissnan/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1``
 修改站点配置文件``_config.yml``
 ```
 title: 一只病猫
@@ -53,13 +54,11 @@ NEXT强大之处在于继承了很多第三方服务插件，不过类似评论�
 3. 设置标签分类
 参考[链接][5]，在文章开头，引入：
 ```
----
 title: 设计模式
 date: 2018-07-18 09:43:00
 tags:
     - JAVA
 categories: JAVA
----
 ```
 更多配置请参考官方文档
 
