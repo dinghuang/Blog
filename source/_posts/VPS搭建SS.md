@@ -2,8 +2,8 @@
 title: VPS搭建SS
 date: 2018-09-08 22:49:00
 tags:
-    - 其他
-categories: 其他
+    - Linux
+categories: Linux
 ---
 
 #   购买VPS服务器

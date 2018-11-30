@@ -1,4 +1,12 @@
-# 如何在GitHub Page使用HEXO搭建博客
+---
+title: 如何在GitHub Page使用HEXO搭建博客
+date: 2018-09-21 13:51:00
+tags:
+    - JavaScript
+categories: JavaScript
+---
+
+# 如何在使用GitHub Page搭建HEXO博客
 
 [项目地址][6]
 

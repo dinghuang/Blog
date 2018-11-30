@@ -4,7 +4,8 @@
       * [1.1 <a href="https://dinghuang.github.io/2017/10/09/Git%E5%AD%A6%E4%B9%A0/" rel="nofollow">Git使用笔记：个人在使用Git的一些心得</a>](#11-git使用笔记个人在使用git的一些心得)
       * [1.2 <a href="https://dinghuang.github.io/2018/07/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="nofollow">设计模式：用java语言阐述的33种设计模式</a>](#12-设计模式用java语言阐述的33种设计模式)
       * [1.3 <a href="https://dinghuang.github.io/2018/09/08/VPS%E6%90%AD%E5%BB%BASS/" rel="nofollow">服务器搭建梯子：仅供学习交流</a>](#13-服务器搭建梯子仅供学习交流)
-      * [1.4 代码练习](#14-代码练习)
+      * [1.4 <a href="https://dinghuang.github.io/2018/09/21/%E5%A6%82%E4%BD%95%E5%9C%A8GitHub%20Page%E4%BD%BF%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="nofollow">如何在GitHubPage使用HEXO搭建博客</a>](#14-如何在GitHubPage使用HEXO搭建博客)
+      * [1.5 代码练习](#15-代码练习)
     * [2. 团队开源项目](#2-团队开源项目)
         * [2.1 代码管理](#21-代码管理)
         * [2.2 分布式文件系统](#22-分布式文件系统)
@@ -41,7 +42,8 @@
 ### 1.1 [Git使用笔记：个人在使用Git的一些心得][1]
 ### 1.2 [设计模式：用java语言阐述的33种设计模式][2]
 ### 1.3 [服务器搭建梯子：仅供学习交流][3]
-### 1.4 代码练习
+### 1.4 [如何在GitHub Page使用HEXO搭建博客][187]
+### 1.5 代码练习
  1. [Java8新特性][4]
  2. [Google的Guava工具包][5]
  3. [多线程相关][6]
@@ -112,7 +114,6 @@
 ### 2.12 响应式编程
  1. [Reactor：spring社区开源，在spring 5.0直接引入。][51]
  2. [Vert.x：基于netty,可以通过它使用JavaScript、Ruby、Groovy、Java、甚至是混合语言来编写应用。][52]
- 3. [RxJava：安卓上用的特别多，特别与RxAndroid,Retrofit等结合使用。][53]
 ### 2.13 热加载
  1. [JRebel：收费，IDEA，Eclipse，Netbeans都有它的插件，目前自己在IDEA上用破解版。][54]
  2. [Spring-Loaded：Spring开源热更新工具。][55]
@@ -134,6 +135,7 @@
  3. [Grafana：开源数据可视化仪表视图服务。][68]
  4. [kibana：ElasticSearch下的数据可视化服务。][69]
  5. [thingsboard：开源可视化平台。][70]
+ 6. [SkyWalking：一款优秀的国产APM工具，包括了分布式追踪、性能指标分析、应用和服务依赖分析等，跟Zipkin都是目前主要的一些APM工具。][191]
 ### 2.17 前端相关
  1. [Bootstrap：扁平化风格前端UI框架。][71]
  2. [AntDesign：阿里出品，在React上的企业前端UI框架。][72]
@@ -149,6 +151,7 @@
  12. [ckeditor：富文本编辑器。][166]
  13. [Echarts：百度出品的可视化工具，目前用的较多，现在有React版本的Echarts。][170]
  14. [Quill：也是一款富文本编辑器，大多用来做二次开发。][171]
+ 15. [F2：阿里出品的移动端图形可视化框架。][188]
 ### 2.18 分布式相关工具
  1. [Eureka：Netflix开源的，java开发，基于restful，用于服务注册。][79]
  2. [Consul：Consul是一种分布式，高可用性和数据中心感知解决方案，用于跨动态分布式基础架构连接和配置应用程序。][80]
@@ -159,6 +162,8 @@
  7. [Kong：是一个云原生，快速，可扩展和分布式微服务抽象层（也称为API网关，API中间件或在某些情况下为Service Mesh）。][85]
  8. [Spinnaker：是一个开源的，多云连续交付平台，用于以高速度和可靠性发布软件更改。][86]
  9. [Nginx：是一个异步框架的Web服务器，也可以用作反向代理，负载平衡器 和HTTP缓存。][173]
+ 10. [CircleCI：持续集成，自动部署工具，跟Gitlab CI不同的是，CircleCI主要与GitHub集成。][189]
+ 11. [Sentinel：阿里中间件团队开源的，面向分布式服务架构的轻量级高可用流量控制组件，从对比来看Sentinel比Hystrix在功能性上还要强大一些。][190]
 ### 2.19 数据库相关
  1. [MySQL：适用于个人的小型开源数据库，现在微服务比较热门，一个大型服务拆分为模块服务，MySQL就比较适用于微服务。][87]
  2. [Oracle：老牌数据库，非常强大，现在收购了Sun公司和MySQL。][88]
@@ -194,15 +199,16 @@
  9. [R：R语言，一种自由软件编程语言与操作环境，主要用于统计分析、绘图、数据挖掘。][179]
 ### 2.22 工具相关
  1. [Guava：Google开源，十分强大，包含许多Google核心的Java常用库，Java8吸取了Guava的许多优点发展自己的新特性。][110]
- 2. [Apache Commons：包含了很多开源的工具。][111]
- 3. [Lombok：注解通过编译器生成getter,setter,builder等代码。][112]
- 4. [Chronicle Map：基于内存的键值对存储,低延迟、高并发,支持持久化到磁盘，以及多键值查询。][113]
- 5. [reflections：一个java反射工具包。][114]
- 6. [strman-java：一个字符串处理工具,使用它可以解决几乎所有字符串处理场景。][115]
- 7. [Jgit: java实现git操作。][116]
- 8. [Redisson：在Redis的基础上实现的Java驻内存数据网格（In-Memory Data GridEhcache – Java分布式缓存框架）。它不仅提供了一系列的分布式的Java常用对象，还提供了许多分布式服务，可以用于分布式服务锁。][117]
- 9. [OpenGrok：Oracle公司的，用Java编写的源代码库搜索工具。][118]
- 10. [mybatis-3：Mybatis在Java的映射工具包，源码设计缓存设计、大量的反射，挺值得看的。][119]
+ 2. [RxJava：一个工具库，十分强大，用于使用Java VM的可观察序列组合异步和基于事件的程序。][53]
+ 3. [Apache Commons：包含了很多开源的工具。][111]
+ 4. [Lombok：注解通过编译器生成getter,setter,builder等代码。][112]
+ 5. [Chronicle Map：基于内存的键值对存储,低延迟、高并发,支持持久化到磁盘，以及多键值查询。][113]
+ 6. [reflections：一个java反射工具包。][114]
+ 7. [strman-java：一个字符串处理工具,使用它可以解决几乎所有字符串处理场景。][115]
+ 8. [Jgit: java实现git操作。][116]
+ 9. [Redisson：在Redis的基础上实现的Java驻内存数据网格（In-Memory Data GridEhcache – Java分布式缓存框架）。它不仅提供了一系列的分布式的Java常用对象，还提供了许多分布式服务，可以用于分布式服务锁。][117]
+ 10. [OpenGrok：Oracle公司的，用Java编写的源代码库搜索工具。][118]
+ 11. [mybatis-3：Mybatis在Java的映射工具包，源码设计缓存设计、大量的反射，挺值得看的。][119]
 ### 2.23 缓存框架
  1. [Ehcache：Java分布式缓存框架。][120]
  2. [Cacheonix：高性能Java分布式缓存系统。][121]
@@ -216,6 +222,9 @@
 ### 2.25 工作流引擎
  1. [Activiti：目前用的比较多的工作流，重点关注在系统开发的易用性和轻量性上。][128]
  2. [JBPM：是JBoss中一款开源的工作流引擎，是一个轻量级的，使用最新的BPMN 2规范可扩展的，目前最新的是JBPM3。][129]
+ 3. [Conductor：Netflix开源的协调分布式微服务的工作流。][192]
+ 4. [Zeebe：目前关注的一个正在开发的真正意义上的微服务的工作流，让其他微服务串起来的工作流，目前还没出1.0。][193]
+ 5. [Camunda：一个基于Java的框架，支持BPMN用于工作流和过程自动化。][193]
 ### 2.26 代码标准
  1. [p3c：阿里巴巴代码规约。][130]
  2. [SonarQube：一个开源的代码质量管理系统。][131]
@@ -255,8 +264,9 @@
  4. [undertow：简易高性能无阻塞网络Java服务器框架。][147]
  5. [Lealone：兼具RDBMS、NoSQL优点的个人异步化NewSQL单机与分布式关系数据库。][150]
  6. [elasticsearch-analysis-ik：ElasticSearch中文分词工具。][154]
- 7. [jersey：基于RESTful设计的java网络服务框架，目前已经停止维护。][155]
+ 7. [jersey：基于RESTful设计的Java网络服务框架，目前已经停止维护。][155]
  8. [JSqlParser：解析SQL语句并将其转换为Java类的层次结构。][156]
+ 9. [hexo-theme-next：HERO博客的NEXT主题，集成融合了许多第三方服务，自己的博客就是用NEXT主题。][186]
 
 
   [1]: https://dinghuang.github.io/2017/10/09/Git%E5%AD%A6%E4%B9%A0/
@@ -444,3 +454,12 @@
   [183]: https://ones.ai/wiki.html
   [184]: https://www.npmjs.com/
   [185]: https://www.postgresql.org/
+  [186]: https://github.com/iissnan/hexo-theme-next
+  [187]: https://dinghuang.github.io/2018/09/21/%E5%A6%82%E4%BD%95%E5%9C%A8GitHub%20Page%E4%BD%BF%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/
+  [188]: https://github.com/antvis/f2
+  [189]: https://circleci.com/
+  [190]: https://github.com/alibaba/Sentinel
+  [191]: https://github.com/apache/incubator-skywalking
+  [192]: https://netflix.github.io/conductor/
+  [193]: https://docs.zeebe.io/introduction/install.html
+  [194]: https://docs.camunda.org/manual/7.9/introduction/
