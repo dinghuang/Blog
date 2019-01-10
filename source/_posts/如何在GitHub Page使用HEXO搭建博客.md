@@ -85,8 +85,8 @@ categories: JAVA
 `` hexo deploy``
 此时文章已经成功部署。
 
-  [1]: https://note.youdao.com/yws/public/resource/cf7c41010a7c5769daf36ed28209eda3/xmlnote/A621EF7ED1CA4E3F9249E04FC033831B/3282
-  [2]: https://note.youdao.com/yws/public/resource/cf7c41010a7c5769daf36ed28209eda3/xmlnote/2EF0BE5C89D649E49278592AE806FD65/3285
+  [1]: https://ws1.sinaimg.cn/large/007yGiDRgy1fyy2iwon08j31f2110dln.jpg
+  [2]: https://ws1.sinaimg.cn/large/007yGiDRgy1fyy2k0uun6j31lg0rsqaf.jpg
   [3]: https://theme-next.iissnan.com/third-party-services.html#search-system
   [4]: https://theme-next.iissnan.com/third-party-services.html
   [5]: https://github.com/iissnan/hexo-theme-next
