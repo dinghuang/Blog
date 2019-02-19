@@ -118,8 +118,22 @@ custom_domains = strongcat.top #所绑定的公网服务器域名，一级、二
 nohup ./frpc -c ./frpc.ini &
 ```
 
+#### 认证超时解决办法
+一般认证超时的原因是由于2个服务器之间时间不同，可以通过命令tzselect修改时区，按照步骤设置时区
+```
+$ tzselect
+```
 
-## 使用
+同步服务器时间
+```
+sudo yum install ntp
+timedatectl set-timezone Asia/Shanghai
+timedatectl set-ntp yes
+```
+
+查看时间确保同步``timedatectl``
+
+## 开机自启动
 
 我用的是centOS7的操作系统，为了防止因为网络或者重启问题Frp失效，所以写了一个开机启动服务，公网服务器配置：
 
@@ -220,4 +234,161 @@ lock 仅锁屏，计算机继续工作。
 ```
 systemctl restart systemd-logind
 ```
- 
+
+## 进阶（配合nginx实现域名转发）
+
+### 购买域名
+购买域名，国内需要备案，然后再阿里云中添加域名，创建域名解析，如图所示
+![image](https://ws1.sinaimg.cn/large/9bc4cb9fgy1g0and9vxv5j225607ut9t.jpg)
+
+### 安装nginx
+```
+docker pull nginx
+```
+新建文件``nginx.conf``
+```
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+
+  # frp的接收http请求的反向代理
+    server {
+        listen 80;
+        server_name *.strongsickcat.com strongsickcat.com;
+
+        location / {
+            # 7071端口即为frp监听的http端口
+            proxy_pass http://127.0.0.1:8080;
+            proxy_set_header Host $host:80;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+
+            proxy_connect_timeout 7d;
+            proxy_send_timeout 7d;
+            proxy_read_timeout 7d;
+
+            }
+        # 防止爬虫抓取
+        if ($http_user_agent ~* "360Spider|JikeSpider|Spider|spider|bot|Bot|2345Explorer|curl|wget|webZIP|qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot|NSPlayer|bingbot")
+            {
+                return 403;
+            }
+    }
+}
+```
+docker启动nginx
+```
+docker run -p 80:80 --name mynginx -v $PWD/www:/www -v $PWD/nginx.conf:/etc/nginx/nginx.conf -v $PWD/logs:/wwwlogs  -d nginx
+```
+附上frp客户端与服务端配置
+```
+#frps.ini
+[common]
+bind_port = 7000
+max_pool_count = 20
+allow_ports = 4000-50000
+dashboard_port = 7500
+dashboard_user = admin
+dashboard_pwd = 742041978
+token = 2524668868
+authentication_timeout = 900
+vhost_http_port = 8080
+subdomain_host = strongsickcat.com
+```
+```
+#客户端 frpc.ini
+[common]
+server_addr = 106.15.226.184
+server_port = 7000
+token = 2524668868
+admin_addr = 127.0.0.1
+admin_port = 7400
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 6000
+
+[test_static_file]
+type = tcp
+remote_port = 16001
+plugin = static_file
+plugin_local_path = /root/file
+plugin_strip_prefix = static
+plugin_http_user = admin
+plugin_http_passwd = 742041978
+
+[kibana]
+type = http
+# local_port代表你想要暴露给外网的本地web服务端口
+local_port = 5601
+# subdomain 在全局范围内要确保唯一，每个代理服务的subdomain不能重名，否则会影响正常使用。
+# 客户端的subdomain需和服务端的subdomain_host配合使用
+subdomain = kibana
+
+[elasticsearch]
+type = http
+local_port = 9200
+subdomain = elasticsearch
+
+[mysql]
+type = tcp
+local_port = 3306
+remote_port = 13306
+
+[prometheus]
+type = http
+local_port = 9090
+subdomain = prometheus
+
+[prometheus-linux]
+type = tcp
+local_port = 9100
+remote_port = 9100
+
+[prometheus-mysql]
+type = tcp
+local_port = 9104
+remote_port = 9104
+
+[grafana]
+type = http
+local_port = 3000
+subdomain = grafana
+
+[prometheusa]
+type = tcp
+local_port = 9090
+remote_port = 9090
+```
+按照我的配置文件，可以直接通过子域名访问kibana服务
+http://kibana.strongsickcat.com:8080
