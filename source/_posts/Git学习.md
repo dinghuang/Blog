@@ -88,7 +88,7 @@ Git 自带一个 `git config` 的工具来帮助设置控制 Git 外观和行为
 当安装完 Git 应该做的第一件事就是设置你的用户名称与邮件地址。 这样做很重要，因为每一个 Git 的提交都会使用这些信息，并且它会写入到你的每一次提交中，不可更改：
 
     $ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+    $ git config --global user.email johndoe@example.com
 
 再次强调，如果使用了 `--global` 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 `--global` 选项的命令来配置。
 
@@ -129,9 +129,9 @@ $ git config --global user.email johndoe@example.com
 如果你打算使用 Git 来对现有的项目进行管理，你只需要进入该项目目录并输入：
 
     $ git init
-$ git add *.c
+    $ git add *.c
     $ git add LICENSE
-$ git commit -m 'initial project version'
+    $ git commit -m 'initial project version'
 
 2.克隆现有的仓库
 --------------------------------------------------
@@ -146,14 +146,17 @@ $ git commit -m 'initial project version'
 
 ### 2.1. 检查当前文件状态
 
-    $ git status
-    On branch master
-    nothing to commit, working directory clean
+``` 
+$ git status
+On branch master
+nothing to commit, working directory clean
+```
+   
     
 现在，让我们在项目下创建一个新的 README 文件。 如果之前并不存在这个文件，使用 git status 命令，你将看到一个新的未跟踪文件：
 
     $ echo 'My Project' > README
-$ git status
+    $ git status
     On branch master
     Untracked files:
       (use "git add <file>..." to include in what will be committed)
@@ -197,7 +200,7 @@ $ git status
 文件 `CONTRIBUTING.md` 出现在 `Changes not staged for commit` 这行下面，说明已跟踪文件的内容发生了变化，但还没有放到暂存区。 要暂存这次更新，需要运行 `git add` 命令。 这是个多功能命令：可以用它开始跟踪新文件，或者把已跟踪的文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态等。 将这个命令理解为“添加内容到下一次提交中”而不是“将一个文件添加到项目中”要更加合适。 现在让我们运行 `git add` 将"`CONTRIBUTING.md`"放到暂存区，然后再看看 `git status` 的输出：
 
     $ git add CONTRIBUTING.md
-$ git status
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -208,7 +211,7 @@ $ git status
 现在两个文件都已暂存，下次提交时就会一并记录到仓库。 假设此时，你想要在 `CONTRIBUTING.md` 里再加条注释， 重新编辑存盘后，准备好提交。 不过且慢，再运行 `git status` 看看：
 
     $ vim CONTRIBUTING.md
-$ git status
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -225,7 +228,7 @@ $ git status
 怎么回事？ 现在 `CONTRIBUTING.md` 文件同时出现在暂存区和非暂存区。 这怎么可能呢？ 好吧，实际上 Git 只不过暂存了你运行 `git add` 命令时的版本， 如果你现在提交`，CONTRIBUTING.md` 的版本是你最后一次运行 `git add` 命令时的那个版本，而不是你运行 `git commit` 时，在工作目录中的当前版本。 所以，运行了 `git add` 之后又作了修订的文件，需要重新运行 `git add` 把最新版本重新暂存起来：
 
     $ git add CONTRIBUTING.md
-$ git status
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -319,7 +322,7 @@ $ git status
 像之前说的，暂存 `CONTRIBUTING.md` 后再编辑，运行 `git status` 会看到暂存前后的两个版本。 如果我们的环境（终端输出）看起来如下：
 
     $ git add CONTRIBUTING.md
-$ echo '# test line' >> CONTRIBUTING.md
+    $ echo '# test line' >> CONTRIBUTING.md
     $ git status
     On branch master
     Changes to be committed:
@@ -422,7 +425,7 @@ $ echo '# test line' >> CONTRIBUTING.md
 如果只是简单地从工作目录中手工删除文件，运行 `git status` 时就会在 `“Changes not staged for commit”` 部分（也就是 未暂存清单）看到：
 
     $ rm PROJECTS.md
-$ git status
+    $ git status
     On branch master
     Your branch is up-to-date with 'origin/master'.
     Changes not staged for commit:
@@ -436,8 +439,8 @@ $ git status
 然后再运行 `git rm` 记录此次移除文件的操作：
 
     $ git rm PROJECTS.md
-rm 'PROJECTS.md'
-$ git status
+    rm 'PROJECTS.md'
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -469,7 +472,7 @@ $ git status
 它会恰如预期般正常工作。 实际上，即便此时查看状态信息，也会明白无误地看到关于重命名操作的说明：
 
     $ git mv README.md README
-$ git status
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -479,7 +482,7 @@ $ git status
 其实，运行 `git mv` 就相当于运行了下面三条命令：
 
     $ mv README.md README
-$ git rm README.md
+    $ git rm README.md
     $ git add README
 
 如此分开操作，Git 也会意识到这是一次改名，所以不管何种方式结果都一样。 两者唯一的区别是，`mv` 是一条命令而另一种方式需要三条命令，直接用 `git mv` 轻便得多。 不过有时候用其他工具批处理改名的话，要记得在提交前删除老的文件名，再添加新的文件名。
@@ -729,7 +732,7 @@ $ git rm README.md
 例如，你提交后发现忘记了暂存某些需要的修改，可以像下面这样操作：
 
     $ git commit -m 'initial commit'
-$ git add forgotten_file
+    $ git add forgotten_file
     $ git commit --amend
 
 最终你只会有一个提交 - 第二次提交将代替第一次提交的结果。
@@ -738,7 +741,7 @@ $ git add forgotten_file
 接下来的两个小节演示如何操作暂存区域与工作目录中已修改的文件。 这些命令在修改文件状态的同时，也会提示如何撤消操作。 例如，你已经修改了两个文件并且想要将它们作为两次独立的修改提交，但是却意外地输入了 `git add *` 暂存了它们两个。 如何只取消暂存两个中的一个呢？ `git status` 命令提示了你：
 
     $ git add *
-$ git status
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -751,7 +754,7 @@ $ git status
     $ git reset HEAD CONTRIBUTING.md
     Unstaged changes after reset:
     M	CONTRIBUTING.md
-$ git status
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -782,7 +785,7 @@ Note
 它非常清楚地告诉了你如何撤消之前所做的修改。 让我们来按照提示执行：
 
     $ git checkout -- CONTRIBUTING.md
-$ git status
+    $ git status
     On branch master
     Changes to be committed:
       (use "git reset HEAD <file>..." to unstage)
@@ -813,7 +816,7 @@ Important
     Receiving objects: 100% (1857/1857), 374.35 KiB | 268.00 KiB/s, done.
     Resolving deltas: 100% (772/772), done.
     Checking connectivity... done.
-$ cd ticgit
+    $ cd ticgit
     $ git remote
     origin
 
@@ -826,7 +829,7 @@ $ cd ticgit
 如果你的远程仓库不止一个，该命令会将它们全部列出。 例如，与几个协作者合作的，拥有多个远程仓库的仓库看起来像下面这样：
 
     $ cd grit
-$ git remote -v
+    $ git remote -v
     bakkdoor  https://github.com/bakkdoor/grit (fetch)
     bakkdoor  https://github.com/bakkdoor/grit (push)
     cho45     https://github.com/cho45/grit (fetch)
@@ -845,7 +848,7 @@ $ git remote -v
 我在之前的章节中已经提到并展示了如何添加远程仓库的示例，不过这里将告诉你如何明确地做到这一点。 运行 `git remote add <shortname> <url>` 添加一个新的远程 Git 仓库，同时指定一个你可以轻松引用的简写：
 
     $ git remote origin
-$ git remote add pb https://github.com/paulboone/ticgit
+    $ git remote add pb https://github.com/paulboone/ticgit
     $ git remote -v
     origin	https://github.com/schacon/ticgit (fetch)
     origin	https://github.com/schacon/ticgit (push)
@@ -928,7 +931,7 @@ $ git remote add pb https://github.com/paulboone/ticgit
 如果想要重命名引用的名字可以运行 `git remote rename` 去修改一个远程仓库的简写名。 例如，想要将 `pb` 重命名为 `paul`，可以用 git remote rename 这样做：
 
     $ git remote rename pb paul
-$ git remote
+    $ git remote
     origin
     paul
 
@@ -975,7 +978,7 @@ Git 使用两种主要类型的标签：轻量标签（`lightweight`）与附注
 在 Git 中创建一个附注标签是很简单的。 最简单的方式是当你在运行 `tag` 命令时指定 `-a` 选项：
 
     $ git tag -a v1.4 -m 'my version 1.4'
-$ git tag
+    $ git tag
     v0.1
     v1.3
     v1.4
@@ -1002,7 +1005,7 @@ $ git tag
 另一种给提交打标签的方式是使用轻量标签。 轻量标签本质上是将提交校验和存储到一个文件中 - 没有保存任何其他信息。 创建轻量标签，不需要使用 `-a`、`-s` 或 `-m` 选项，只需要提供标签名字：
 
     $ git tag v1.4-lw
-$ git tag
+    $ git tag
     v0.1
     v1.3
     v1.4
@@ -1099,9 +1102,9 @@ $ git tag
 Git 并不会在你输入部分命令时自动推断出你想要的命令。 如果不想每次都输入完整的 Git 命令，可以通过 `git config` 文件来轻松地为每一个命令设置一个别名。 这里有一些例子你可以试试：
 
     $ git config --global alias.co checkout
-$ git config --global alias.br branch
+    $ git config --global alias.br branch
     $ git config --global alias.ci commit
-$ git config --global alias.st status
+    $ git config --global alias.st status
 
 这意味着，当要输入 `git commit` 时，只需要输入 `git ci`。 随着你继续不断地使用 Git，可能也会经常使用其他命令，所以创建别名时不要犹豫。
 
@@ -1112,7 +1115,7 @@ $ git config --global alias.st status
 这会使下面的两个命令等价：
 
     $ git unstage fileA
-$ git reset HEAD -- fileA
+    $ git reset HEAD -- fileA
 
 这样看起来更清楚一些。 通常也会添加一个 `last` 命令，像这样：
 
@@ -1133,5 +1136,5 @@ $ git reset HEAD -- fileA
 
     $ git config --global alias.visual '!gitk'
 
-  [1]: https://git-scm.com/book/en/v2/images/areas.png
-  [2]: https://git-scm.com/book/en/v2/images/lifecycle.png
+  [1]: https://minios.strongsickcat.com/dinghuang-blog-picture/areas.png
+  [2]: https://minios.strongsickcat.com/dinghuang-blog-picture/lifecycle.png
