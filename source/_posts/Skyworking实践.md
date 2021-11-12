@@ -508,6 +508,7 @@ Java代理插件都是可插入的。可以optional-plugins在代理或第三方
 ### 前端配置
 前端配置在文件夹``webapp``的``webapp.yml``文件里面。
 
+
 ## 客户端接入
 ### java应用
 执行命令里面加上
@@ -646,13 +647,17 @@ Agent.start({
 
 
 Environment Variable | Description | Default
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | `SW_AGENT_NAME` | The name of the service | `your-nodejs-service` |
 | `SW_AGENT_INSTANCE` | The name of the service instance | Randomly generated |
 | `SW_AGENT_COLLECTOR_BACKEND_SERVICES` | The backend OAP server address | `127.0.0.1:11800` |
 | `SW_AGENT_AUTHENTICATION` | The authentication token to verify that the agent is trusted by the backend OAP, as for how to configure the backend, refer to [the yaml](https://github.com/apache/skywalking/blob/4f0f39ffccdc9b41049903cc540b8904f7c9728e/oap-server/server-bootstrap/src/main/resources/application.yml#L155-L158). | not set |
 | `SW_AGENT_LOGGING_LEVEL` | The logging level, could be one of `CRITICAL`, `FATAL`, `ERROR`, `WARN`(`WARNING`), `INFO`, `DEBUG` | `INFO` |
 | `SW_AGENT_MAX_BUFFER_SIZE` | The maximum buffer size before sending the segment data to backend | `'1000'` |
+
+### 前端接入
+可以参考[官方文档](https://github.com/apache/skywalking-client-js)
+
 
 ## 高级功能
 
