@@ -12,10 +12,10 @@ categories: JAVA
 Selenium可以对浏览器进行自动化测试。它主要用于自动化Web应用程序以进行测试，但当然不仅限于此。无聊的基于Web的管理任务也可以自动化。 Selenium得到了一些最大的浏览器供应商的支持，这些供应商已采取（或正在采取）将Selenium作为其浏览器本机部分的步骤。它也是无数其他浏览器自动化工具，API和框架的核心技术。支持多种语言，在java中可以作为自动化测试框架，在python中可以模拟页面用户点击对自动化爬虫进行补充。
 
 支持的浏览器：
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/007yGiDRgy1fyy2e6qz72j310m0wu45r.jpg)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/007yGiDRgy1fyy2e6qz72j310m0wu45r.jpg)
 # Selenium使用
 Selenium提供了一种非常简单的开发方式，例如用Chrome开发的话，去开发者工具下载Katalon Selenium IDE，如图所示。
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/007yGiDRgy1fyy2ex4m1gj315o15gjwi.jpg)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/007yGiDRgy1fyy2ex4m1gj315o15gjwi.jpg)
 
 ## 开始录制
 录制过程中，IDE会自动帮我们把命令行插入到测试用例中，包括：

@@ -10,7 +10,7 @@ categories: JAVA
 
 # TestNG简介
 
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/9bc4cb9fgy1g0apgqmzy2j206o06odhi.jpg)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/9bc4cb9fgy1g0apgqmzy2j206o06odhi.jpg)
 
 TestNG是一个受JUnit和NUnit启发的测试框架，但引入了一些新功能，使其功能更强大，相对于JUnit来说，xml的配置使的testNG对于不同测试之间的依赖程度有更好的把控性。
 

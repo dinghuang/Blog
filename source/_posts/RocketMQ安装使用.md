@@ -9,7 +9,7 @@ categories: java
 RocketMQ 一个纯 Java、分布式、队列模型的开源消息中间件，前身是 MetaQ，是阿里研发的一个队列模型的消息中间件，后开源给 apache 基金会成为了 apache的顶级开源项目，具有高性能、高可靠、高实时、分布式特点。
 
 ## 架构设计
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/common/p68921.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/p68921.png)
 
 - Name Server：是一个几乎无状态节点，可集群部署，在消息队列RocketMQ版中提供命名服务，更新和发现Broker服务。
 - Broker：消息中转角色，负责存储消息，转发消息。分为Master Broker和Slave Broker，一个Master Broker可以对应多个Slave Broker，但是一个Slave Broker只能对应一个Master Broker。Broker启动后需要完成一次将自己注册至Name Server的操作；随后每隔30s定期向Name Server上报Topic路由信息。
@@ -17,7 +17,7 @@ RocketMQ 一个纯 Java、分布式、队列模型的开源消息中间件，前
 - 消费者：与Name Server集群中的其中一个节点（随机）建立长连接，定期从Name Server拉取Topic路由信息，并向提供Topic服务的Master Broker、Slave Broker建立长连接，且定时向Master Broker、Slave Broker发送心跳。Consumer既可以从Master Broker订阅消息，也可以从Slave Broker订阅消息，订阅规则由Broker配置决定。
 
 ### 部署架构
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/common/rocketmq_architecture_3.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/rocketmq_architecture_3.png)
 
 
 - NameServer是一个几乎无状态节点，可集群部署，节点之间无任何信息同步。
@@ -60,7 +60,7 @@ Broker包含了以下几个重要子模块：
 - Store Service：提供方便简单的API接口处理消息存储到物理硬盘和查询功能。
 - HA Service：高可用服务，提供Master Broker 和 Slave Broker之间的数据同步功能。
 - Index Service：根据特定的Message key对投递到Broker的消息进行索引服务，以提供消息的快速查询。
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/common/rocketmq_architecture_1.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/rocketmq_architecture_1.png)
 ### 名字服务（Name Server）
 名称服务充当路由消息的提供者。生产者或消费者能够通过名字服务查找各主题相应的Broker IP列表。多个Namesrv实例组成集群，但相互独立，没有信息交换。
 
@@ -302,7 +302,7 @@ docker-compose -f ./docker-compose.yml up
 ```
 
 运行日志如下：
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/common/WechatIMG729.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG729.png)
 ```
 CONTAINER ID        IMAGE                                                 COMMAND                  CREATED             STATUS                       PORTS                                                                      NAMES
 ed6f1b7e8864        apache/rocketmq-dashboard:1.0.0-centos                "java -jar bin/rocke…"   4 minutes ago       Up 2 seconds                 0.0.0.0:8080->8080/tcp                                                     rocketmq-dashboard
@@ -310,7 +310,7 @@ ed6f1b7e8864        apache/rocketmq-dashboard:1.0.0-centos                "java 
 3db70550d6c2        apacherocketmq/rocketmq:4.9.2                         "sh mqnamesrv"           4 minutes ago       Up 37 seconds                10909/tcp, 0.0.0.0:9876->9876/tcp, 10911-10912/tcp                         rocketmq-namesrv
 ```
 登录地址：http://localhost:8080/#/  访问，如图所示：
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/common/WechatIMG730.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG730.png)
 
 ## 普通部署
 可以参考[官方文档](https://github.com/apache/rocketmq/blob/master/docs/cn/operation.md)
@@ -485,7 +485,7 @@ public class SyncProducer {
 }
 ```
 查看消息如图所示：
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/common/WechatIMG731.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG731.png)
 
 ### 发送异步消息
 异步消息通常用在对响应时间敏感的业务场景，即发送端不能容忍长时间地等待Broker的响应。

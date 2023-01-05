@@ -110,14 +110,14 @@ public class RedisConfiguration extends CachingConfigurerSupport {
     }
 ```
 如图所示
-![](https://minios.strongsickcat.com/dinghuang-blog-picture/9bc4cb9fgy1g1fxturm52j219e0k2ac6.jpg)
+![](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/9bc4cb9fgy1g1fxturm52j219e0k2ac6.jpg)
 
 
 ## Redisson
 [Redisson](https://redisson.org)是一个在Redis的基础上实现的Java驻内存数据网格（In-Memory Data Grid）。它不仅提供了一系列的分布式的Java常用对象，还提供了许多分布式服务。其中包括(BitSet, Set, Multimap, SortedSet, Map, List, Queue, BlockingQueue, Deque, BlockingDeque, Semaphore, Lock, AtomicLong, CountDownLatch, Publish / Subscribe, Bloom filter, Remote service, Spring cache, Executor service, Live Object service, Scheduler service) Redisson提供了使用Redis的最简单和最便捷的方法。Redisson的宗旨是促进使用者对Redis的关注分离（Separation of Concern），从而让使用者能够将精力更集中地放在处理业务逻辑上。能够完美的在云计算环境里使用，并且支持AWS ElastiCache主备版，AWS ElastiCache集群版，Azure Redis Cache和阿里云（Aliyun）的云数据库Redis版。Redisson底层采用的是Netty 框架。支持Redis 2.8以上版本，支持Java1.6+以上版本。
 
 Redisson作为独立节点 可以用于独立执行其他节点发布到分布式执行服务 和 分布式调度任务服务 里的远程任务。
-![](https://minios.strongsickcat.com/dinghuang-blog-picture/9bc4cb9fgy1g1f1ntysocj21b60ycgn7.jpg)
+![](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/9bc4cb9fgy1g1f1ntysocj21b60ycgn7.jpg)
 
 ### 特性
 - 复制的Redis服务器模式（还支持[AWS ElastiCache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Replication.html)和[Azure Redis](https://azure.microsoft.com/en-us/services/cache/)缓存）：

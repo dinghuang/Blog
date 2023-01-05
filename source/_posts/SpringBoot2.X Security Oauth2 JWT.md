@@ -58,7 +58,7 @@ Spring Security当前支持与所有以下技术的身份验证集
 名词解释可以看[SpringOauth2官方文档](https://projects.spring.io/spring-security-oauth/docs/oauth2.html)
 
 # 架构设计
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/spring-boot-authentication-spring-security-architecture.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/spring-boot-authentication-spring-security-architecture.png)
 
 ## 名词解释
 
@@ -77,7 +77,7 @@ Spring Security当前支持与所有以下技术的身份验证集
 – AuthenticationEntryPoint 当客户端未经身份验证访问受保护的资源时，将捕获未经授权的错误并返回401。
 
 ## 认证流程
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/oauth-auth-code_c4oi91.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/oauth-auth-code_c4oi91.png)
 
 # 实践
 ## 引入maven包
@@ -659,4 +659,4 @@ curl -H "Content-Type: application/json" -X POST "http://localhost:8090/oauth/to
 
 # 结合网关
 ## 架构设计
-![image](https://minios.strongsickcat.com/dinghuang-blog-picture/viaL4.png)
+![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/viaL4.png)
