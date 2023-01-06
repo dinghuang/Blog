@@ -149,10 +149,10 @@ output {
 </configuration>
 ```
 启动应用，配置kibana的索引，如图所示
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG469.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG469.png)
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG470.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG470.png)
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG471.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG471.png)
 
 如果添加了索引，页面没有显示索引，还要继续添加的话，这个是Kibana的问题，重启一下Kibana容器就好了。

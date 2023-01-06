@@ -1136,5 +1136,5 @@ Git 并不会在你输入部分命令时自动推断出你想要的命令。 如
 
     $ git config --global alias.visual '!gitk'
 
-  [1]: http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/areas.png
-  [2]: http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/lifecycle.png
+  [1]: https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/areas.png
+  [2]: https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/lifecycle.png

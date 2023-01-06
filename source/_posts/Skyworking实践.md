@@ -32,7 +32,7 @@ SkyWalking分为四个部分：
 - UI：是一个高度可定制的基于Web的界面，允许SkyWalking最终用户可视化和管理SkyWalking数据。
 
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/687474703a2f2f736b7977616c6b696e672e6170616368652e6f72672f6173736574732f6672616d652d76382e6a70673f753d3230323030343233.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/687474703a2f2f736b7977616c6b696e672e6170616368652e6f72672f6173736574732f6672616d652d76382e6a70673f753d3230323030343233.jpeg)
 
 
 # 使用
@@ -74,14 +74,14 @@ git submodule update
  ```
  
 现在服务端就启起来了，可以打开后台地址查看(默认是8080端口): http://localhost:8080,界面如下：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG8155.png)
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG8158.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG8155.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG8158.png)
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG8162.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG8162.png)
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG8153.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG8153.png)
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG8154.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG8154.png)
 
 
 
@@ -674,10 +674,10 @@ Environment Variable | Description | Default
 SkyWalking浏览器监视也提供以下数据: PV（page views，页面浏览量）， UV（unique visitors，独立访客数），浏览量前 N 的页面（Top N Page Views）等。这些数据可以为产品队伍优化他们的产品提供线索。
 
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/plugin.intellij.assistant.mybaitslog-2020.1-1.0.3.jpg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/plugin.intellij.assistant.mybaitslog-2020.1-1.0.3.jpg)
 
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/0081Kckwly1gkl5gnpi0dj30zk0m843n.jpg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/0081Kckwly1gkl5gnpi0dj30zk0m843n.jpg)
 
 
 ### 服务性能指标监控

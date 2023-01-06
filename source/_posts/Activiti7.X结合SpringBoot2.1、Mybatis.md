@@ -11,7 +11,7 @@ categories: java
 
 ### Activiti介绍
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/2317879.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/2317879.png)
 
 Activiti 是由 jBPM 的创建者 Tom Baeyens 离开 JBoss 之后建立的项目，构建在开发 jBPM 版本 1 到 4 时积累的多年经验的基础之上，旨在创建下一代的 BPM 解决方案。
 
@@ -237,9 +237,9 @@ logging:
 #### 数据库说明
 
 数据库会生成25张表，ER图如图所示：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/activiti.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/activiti.png)
 表的列表：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG430.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG430.png)
 
 ```
 ACT_RE_*: RE表示repository，这个前缀的表包含了流程定义和流程静态资源
@@ -606,7 +606,7 @@ public class ActivitiApplication {
 </definitions>
 ```
 这是一个很简单的流程，如图所示:
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG432.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG432.png)
 
 ### 前端实现自定义流程、输出流程图
 官方提供bpmn.js可以实现前端拖动画图，github地址：https://github.com/bpmn-io/bpmn-js
@@ -615,7 +615,7 @@ public class ActivitiApplication {
 
 前端实现输出流程图效果如下，流程节点会高亮显示：
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG433.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG433.png)
 
 这里是我写的一个小demo，代码可以查看我的github代码库。项目启动后，访问http://localhost:8080/v1/activiti/index
 
@@ -626,14 +626,14 @@ public class ActivitiApplication {
 - 根据用户名称查询任务列表（用户名bilu，拿到任务id后去完成任务）
 - 审批approve
 - 回退 back
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG434.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG434.png)
 
 ### 实现随意跳转和回退撤回功能
 
 因为activiti7是以图的形式来操作的，所以这边就要考虑连线的情况。
 
 本文写了并行和串行的撤回以及撤回功能的连线的图，最终效果图如图所示
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/WechatIMG451.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/WechatIMG451.png)
 
 ```
  /**

@@ -108,7 +108,7 @@ DDD通过建立一个业务域到软件域的通用模型，把问题空间同�
 ### 例子
 民航业的运输统计指标为例，牵涉到与运量、运力以及周转量相关的术语，就存在 ICAO（International Civil Aviation Organization，国际民用航空组织）与IATA（International Air Transport Association，国际航空运输协会）两大体系，而中国民航局又有自己的中文解释，航空公司和各大机场亦有自己衍生的定义
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG2.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG2.png)
 
 如果我们不明白城市对运量与航段运量的真正含义，就可能混淆这两种指标的统计计算规则。这种术语理解错误带来的缺陷往往难以发现，除非业务分析人员、开发人员与测试人员能就此知识达成一致的正确理解。
 
@@ -122,7 +122,7 @@ DDD通过建立一个业务域到软件域的通用模型，把问题空间同�
 一个有界上下文可以是一个很小的程序，包括他自己的领域，自己的代码和自己的存储机制，在一个上下文里，他们应该在逻辑上一致，每个有界上下文应该独立于其他的有界上下文。
 
 ### 上下文映射图（Context Mapping）
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/0_Dig5eOh00vMkqOiw.jpg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/0_Dig5eOh00vMkqOiw.jpg)
 
 ### 有界上下文例子
 
@@ -396,7 +396,7 @@ Domain Object 只有属性的 getter/setter 方法的纯数据类，所有的业
 
 # 总结
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/v2-32711c0238ff0ee8a15af95faf13c2c9_1440w.jpg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/v2-32711c0238ff0ee8a15af95faf13c2c9_1440w.jpg)
 
 
 # DDD分层架构
@@ -411,7 +411,7 @@ Domain Object 只有属性的 getter/setter 方法的纯数据类，所有的业
 - 可能会导致级联的修改。这种修改尤其体现在自上而下的方向，不过可以通过依赖倒置来改善。
 
 ## 四层架构
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG9.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG9.png)
 - User Interface为用户界面层（或表示层），负责向用户显示信息和解释用户命令。这里指的用户可以是另一个计算机系统，不一定是使用用户界面的人。
 - Application为应用层，定义软件要完成的任务，并且指挥表达领域概念的对象来解决问题。这一层所负责的工作对业务来说意义重大，也是与其它系统的应用层进行交互的必要渠道。应用层要尽量简单，不包含业务规则或者知识，而只为下一层中的领域对象协调任务，分配工作，使它们互相协作。它没有反映业务情况的状态，但是却可以具有另外一种状态，为用户或程序显示某个任务的进度。
 - Domain为领域层（或模型层），负责表达业务概念，业务状态信息以及业务规则。尽管保存业务状态的技术细节是由基础设施层实现的，但是反映业务情况的状态是由本层控制并且使用的。领域层是业务软件的核心，领域模型位于这一层。
@@ -428,7 +428,7 @@ Domain Object 只有属性的 getter/setter 方法的纯数据类，所有的业
 > 严格意义上来说，User Interface指的是用户界面，Restful消息和配置文件解析等处理应该放在Application层，User Interface层没有的话就空缺。但User Interface也可以理解为用户接口，所以将Restful消息和配置文件解析等处理放在User Interface层也行。
 
 ## 五层架构
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG10.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG10.png)
 - User Interface是用户接口层，主要用于处理用户发送的Restful请求和解析用户输入的配置文件等，并将信息传递给Application层的接口。
 - Application层是应用层，负责多进程管理及调度、多线程管理及调度、多协程调度和维护业务实例的状态模型。当调度层收到用户接口层的请求后，委托Context层与本次业务相关的上下文进行处理。
 - Context是环境层，以上下文为单位，将Domain层的领域对象cast成合适的role，让role交互起来完成业务逻辑。
@@ -445,7 +445,7 @@ Domain Object 只有属性的 getter/setter 方法的纯数据类，所有的业
 
 
 因此，在面向控制面或管理面且消息交互比较多的系统中，DDD分层架构模式就变成了六层，
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG11.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG11.png)
 
 在实践中，将这六层的本地化定义为：
 
@@ -471,9 +471,9 @@ Domain Object 只有属性的 getter/setter 方法的纯数据类，所有的业
 根据该定义，DDD分层架构中的低层组件应该依赖于高层组件提供的接口，即无论高层还是低层都依赖于抽象，整个分层架构好像被推平了。如果我们把分层架构推平，再向其中加入一些对称性，就会出现一种具有对称性特征的架构风格，即六边形架构。六边形架构是Alistair Cockburn在2005年提出的，在这种架构中，不同的客户通过“平等”的方式与系统交互。需要新的客户吗？不是问题。只需要添加一个新的适配器将客户输入转化成能被系统API所理解的参数就行。同时，对于每种特定的输出，都有一个新建的适配器负责完成相应的转化功能。
 
 六边形架构也称为端口与适配器，如下图所示：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/8906859-c7a0c865b8217865.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/8906859-c7a0c865b8217865.png)
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/8906859-27500c1a61ca00ec.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/8906859-27500c1a61ca00ec.png)
 
 六边形每条不同的边代表了不同类型的端口，端口要么处理输入，要么处理输出。对于每种外界类型，都有一个适配器与之对应，外界通过应用层API与内部进行交互。上图中有3个客户请求均抵达相同的输入端口（适配器A、B和C），另一个客户请求使用了适配器D。假设前3个请求使用了HTTP协议（浏览器、REST和SOAP等），而后一个请求使用了AMQP协议（比如RabbitMQ）。端口并没有明确的定义，它是一个非常灵活的概念。无论采用哪种方式对端口进行划分，当客户请求到达时，都应该有相应的适配器对输入进行转化，然后端口将调用应用程序的某个操作或者向应用程序发送一个事件，控制权由此交给内部区域。
 应用程序通过公共API接收客户请求，使用领域模型来处理请求。我们可以将DDD战术设计的建模元素Repository的实现看作是持久化适配器，该适配器用于访问先前存储的聚合实例或者保存新的聚合实例。正如图中的适配器E、F和G所展示的，我们可以通过不同的方式实现资源库，比如关系型数据库、基于文档的存储、分布式缓存或内存存储等。如果应用程序向外界发送领域事件消息，我们将使用适配器H进行处理。该适配器处理消息输出，而上面提到的处理AMQP消息的适配器则是处理消息输入的，因此应该使用不同的端口。
@@ -504,7 +504,7 @@ Domain Object 只有属性的 getter/setter 方法的纯数据类，所有的业
 
 事件风暴也被称为事件建模，形式有点类似于头脑风暴的方法,通过事件风暴的方法可以快速分析复杂业务领域，完成领域建模的目标。
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG3.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG3.png)
 
 > 事件风暴是一项团队活动，旨在通过领域事件识别出聚合根，进而划分微服务的限界上下文。在活动中，团队先通过头脑风暴的形式罗列出领域中所有的领域事件，整合之后形成最终的领域事件集合，然后对于每一个事件，标注出导致该事件的命令（Command），再然后为每个事件标注出命令发起方的角色，命令可以是用户发起，也可以是第三方系统调用或者是定时器触发等。最后对事件进行分类整理出聚合根以及限界上下文。
 
@@ -518,7 +518,7 @@ Domain Object 只有属性的 getter/setter 方法的纯数据类，所有的业
 - 持续探索，发掘子域，BC，用户角色，验收测试标准，补充信息等。
 
 事件风暴的步骤可以如下图所示：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG4.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG4.png)
 
 在我们的一次产品的重构活动中也采用了事件风暴方法。系统代码维护了10几年，代码中存在大量的“坏味道”：重复代码，过长函数，过大的类，过长的参数列表，发散式变化，霰弹式修改，镀金问题，注释不清等问题。实际研发过程中也是经常出现一点改动都可能会引起不可预测的结果，重构势在必行。
 
@@ -1201,7 +1201,7 @@ public class TransferServiceImpl implements TransferService {
 ## 流程图
 
 在重构之前，我们先画一张流程图，描述当前代码在做的每个步骤：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/DDD%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/DDD%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1.jpeg)
 
 这是一个传统的三层分层结构：UI层、业务层、和基础设施层。上层对于下层有直接的依赖关系，导致耦合度过高。在业务层中对于下层的基础设施有强依赖，耦合度高。我们需要对这张图上的每个节点做抽象和整理，来降低对外部依赖的耦合度。
 
@@ -1303,7 +1303,7 @@ DAO 和 Repository 类的对比如下：
 
  
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-1ee42f0915a33f6f000707c974792495_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-1ee42f0915a33f6f000707c974792495_1440w.jpeg)
 
 ## 抽象第三方服务
 类似对于数据库的抽象，所有第三方服务也需要通过抽象解决第三方服务不可控，入参出参强耦合的问题。在这个例子里我们抽象出 ExchangeRateService 的服务，和一个ExchangeRate的Domain Primitive类：
@@ -1332,7 +1332,7 @@ public class ExchangeRateServiceImpl implements ExchangeRateService {
 ### 防腐层（ACL）
 这种常见的设计模式叫做Anti-Corruption Layer（防腐层或ACL）。很多时候我们的系统会去依赖其他的系统，而被依赖的系统可能包含不合理的数据结构、API、协议或技术实现，如果对外部系统强依赖，会导致我们的系统被”腐蚀“。这个时候，通过在系统间加入一个防腐层，能够有效的隔离外部依赖和内部逻辑，无论外部如何变更，内部代码可以尽可能的保持不变。
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-952c66bf1d97e78af66873dd50fe124d_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-952c66bf1d97e78af66873dd50fe124d_1440w.jpeg)
 
 ACL 不仅仅只是多了一层调用，在实际开发中ACL能够提供更多强大的功能：
 
@@ -1342,7 +1342,7 @@ ACL 不仅仅只是多了一层调用，在实际开发中ACL能够提供更多�
 - 易于测试：类似于之前的Repository，ACL的接口类能够很容易的实现Mock或Stub，以便于单元测试。
 - 功能开关：有些时候我们希望能在某些场景下开放或关闭某个接口的功能，或者让某个接口返回一个特定的值，我们可以在ACL配置功能开关来实现，而不会对真实业务代码造成影响。同时，使用功能开关也能让我们容易的实现Monkey测试，而不需要真正物理性的关闭外部依赖。
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-dbec337d0e361426cc58864e67756adb_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-dbec337d0e361426cc58864e67756adb_1440w.jpeg)
 
 ## 抽象中间件
 类似于2.2的第三方服务的抽象，对各种中间件的抽象的目的是让业务代码不再依赖中间件的实现逻辑。因为中间件通常需要有通用型，中间件的接口通常是String或Byte[] 类型的，导致序列化/反序列化逻辑通常和业务逻辑混杂在一起，造成胶水代码。通过中间件的ACL抽象，减少重复胶水代码。
@@ -1389,7 +1389,7 @@ public class AuditMessageProducerImpl implements AuditMessageProducer {
     }
 }
 ```
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-24099ac4f31bf9472bcf8b19ffaf48ab_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-24099ac4f31bf9472bcf8b19ffaf48ab_1440w.jpeg)
 
 ## 封装业务逻辑
 ### 用Domain Primitive封装跟实体无关的无状态计算逻辑
@@ -1474,7 +1474,7 @@ public class AccountTransferServiceImpl implements AccountTransferService {
 ```
 accountTransferService.transfer(sourceAccount, targetAccount, targetMoney, exchangeRate);
 ```
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-14d91a1f537b39307cf72a437ff3c60f_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-14d91a1f537b39307cf72a437ff3c60f_1440w.jpeg)
 
 ## 重构后结果分析
 ```
@@ -1519,11 +1519,11 @@ public class TransferServiceImplNew implements TransferService {
 
 我们可以根据新的结构重新画一张图：
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-44ebd98e1697c75e119aa1d94a8f7768_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-44ebd98e1697c75e119aa1d94a8f7768_1440w.jpeg)
 
 然后通过重新编排后该图变为：
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-5182bc6ecf7fe977b5968d9181a414aa_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-5182bc6ecf7fe977b5968d9181a414aa_1440w.jpeg)
 
 我们可以发现，通过对外部依赖的抽象和内部逻辑的封装重构，应用整体的依赖关系变了：
 
@@ -1538,7 +1538,7 @@ public class TransferServiceImplNew implements TransferService {
 
 在我们传统的代码里，我们一般都很注重每个外部依赖的实现细节和规范，但是今天我们需要敢于抛弃掉原有的理念，重新审视代码结构。在上面重构的代码里，如果抛弃掉所有Repository、ACL、Producer等的具体实现细节，我们会发现每一个对外部的抽象类其实就是输入或输出，类似于计算机系统中的I/O节点。这个观点在CQRS架构中也同样适用，将所有接口分为Command（输入）和Query（输出）两种。除了I/O之外其他的内部逻辑，就是应用业务的核心逻辑。基于这个基础，Alistair Cockburn在2005年提出了Hexagonal Architecture（六边形架构），又被称之为Ports and Adapters（端口和适配器架构）。
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-11af1ddff05b42025e83e204e71c9a5b_1440w.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-11af1ddff05b42025e83e204e71c9a5b_1440w.png)
 
 在这张图中：
 
@@ -1551,39 +1551,39 @@ public class TransferServiceImplNew implements TransferService {
 在Hex中，架构的组织关系第一次变成了一个二维的内外关系，而不是传统一维的上下关系。同时在Hex架构中我们第一次发现UI层、DB层、和各种中间件层实际上是没有本质上区别的，都只是数据的输入和输出，而不是在传统架构中的最上层和最下层。
 
 除了2005年的Hex架构，2008年 Jeffery Palermo的Onion Architecture（洋葱架构）和2017年 Robert Martin的Clean Architecture（干净架构），都是极为类似的思想。除了命名不一样、切入点不一样之外，其他的整体架构都是基于一个二维的内外关系。这也说明了基于DDD的架构最终的形态都是类似的。Herberto Graca有一个很全面的图包含了绝大部分现实中的端口类，值得借鉴。
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-9e83433ede22b4d45e08c067b02e661f_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-9e83433ede22b4d45e08c067b02e661f_1440w.jpeg)
 
 ### 代码组织结构
 为了有效的组织代码结构，避免下层代码依赖到上层实现的情况，在Java中我们可以通过POM Module和POM依赖来处理相互的关系。通过Spring/SpringBoot的容器来解决运行时动态注入具体实现的依赖的问题。一个简单的依赖关系图如下：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/123312kjsalkdkal.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/123312kjsalkdkal.jpeg)
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-b3d0dccea152b7e846dc60ca3d615093_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-b3d0dccea152b7e846dc60ca3d615093_1440w.jpeg)
 
 #### Types 模块
 Types模块是保存可以对外暴露的Domain Primitives的地方。Domain Primitives因为是无状态的逻辑，可以对外暴露，所以经常被包含在对外的API接口中，需要单独成为模块。Types模块不依赖任何类库，纯 POJO 。
 
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-59a53da7e651770e2e1d96bafdf6a503_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-59a53da7e651770e2e1d96bafdf6a503_1440w.jpeg)
 
 #### Domain 模块
 Domain 模块是核心业务逻辑的集中地，包含有状态的Entity、领域服务Domain Service、以及各种外部依赖的接口类（如Repository、ACL、中间件等。Domain模块仅依赖Types模块，也是纯 POJO 。
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-1c36105863c3f5187260a02548dd813b_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-1c36105863c3f5187260a02548dd813b_1440w.jpeg)
 
 
 #### Application模块
 Application模块主要包含Application Service和一些相关的类。Application模块依赖Domain模块。还是不依赖任何框架，纯POJO。
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-b9a185f16cd6203796b582e7c43479d3_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-b9a185f16cd6203796b582e7c43479d3_1440w.jpeg)
 
 
 #### Infrastructure模块
 Infrastructure模块包含了Persistence、Messaging、External等模块。比如：Persistence模块包含数据库DAO的实现，包含Data Object、ORM Mapper、Entity到DO的转化类等。Persistence模块要依赖具体的ORM类库，比如MyBatis。如果需要用Spring-Mybatis提供的注解方案，则需要依赖Spring。
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-31fb63320e200bd58ec087ba4cab195d_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-31fb63320e200bd58ec087ba4cab195d_1440w.jpeg)
 
 ####  Web模块
 Web模块包含Controller等相关代码。如果用SpringMVC则需要依赖Spring。
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/v2-71623c8f80edb4f7a6a0bceb8ebe85f5_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/v2-71623c8f80edb4f7a6a0bceb8ebe85f5_1440w.jpeg)
 
 #### Start模块
 Start模块是SpringBoot的启动类。
@@ -1681,7 +1681,7 @@ Entity（实体）这个词在计算机领域的最初应用可能是来自于Pe
 ## 模型所在模块和转化器
 
 于现在从一个对象变为3+个对象，对象间需要通过转化器（Converter/Mapper）来互相转化。而这三种对象在代码中所在的位置也不一样，简单总结如下：
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/v2-93a7e4f3d3bda78cf8ba33411a5d3e2d_1440w.jpeg)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/v2-93a7e4f3d3bda78cf8ba33411a5d3e2d_1440w.jpeg)
 
 
 
@@ -1691,7 +1691,7 @@ Entity（实体）这个词在计算机领域的最初应用可能是来自于Pe
 
 我自己的项目因为是简单的业务模型，所以用了通用的贫血模型，规范的项目目录结构如下所示（这边缺少了entity和防腐层的设计）：
 
-![image](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG629.png)
+![image](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG629.png)
 
 # DDD领域层的一些设计规范
 

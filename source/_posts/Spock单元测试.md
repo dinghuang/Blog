@@ -507,9 +507,9 @@ afterCount == 2
 ### 报告
 正常运行完成``gradle test``会生成报告在路径``build\reports\tests\test\index.html``，这个是html的，没有覆盖率的情况，如图所示：
 
-![](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG758.png)
+![](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG758.png)
 
 
 运行我们``test.gradle``中自己写的task，``gradle jacocoReport``，会生成单元测试覆盖报告在路径``build\reports\jacoco\index.html``，如图所示
 
-![](http://www.strongsickcat.com:7014/file/dinghuang-blog-picture/common/WechatIMG759.png)
+![](https://minioapi.frp.strongsickcat.com/file/dinghuang-blog-picture/common/WechatIMG759.png)
